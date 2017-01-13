@@ -21,14 +21,13 @@ app.get('/', function(req, res) {
         os: parser.getOS()
     };
 
-    console.log(req.headers["user-agent"]);
-
     if(JSON.stringify(parser.getBrowser()) !== '{}') data.browser = parser.getBrowser();
     if(JSON.stringify(parser.getDevice()) !== '{}') data.device = parser.getDevice();
     if(JSON.stringify(parser.getEngine()) !== '{}') data.engine = parser.getEngine();
     if(JSON.stringify(parser.getCPU()) !== '{}') data.cpu = parser.getCPU();
 
-    res.end(JSON.stringify(data));
+    res.setHeader('Content-Type', 'application/json');
+    res.end(JSON.stringify(data, null, 3));
 });
 
 app.listen(app.get('port'), function() {
