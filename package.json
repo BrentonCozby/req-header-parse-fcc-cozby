@@ -10,8 +10,8 @@
     "start": "node app.js"
   },
   "dependencies": {
-    "ejs": "2.4.1",
-    "express": "4.13.3",
+    "ejs": "^2.4.1",
+    "express": "^4.13.3",
     "user-agent-parser": "^0.6.0"
   },
   "repository": {
